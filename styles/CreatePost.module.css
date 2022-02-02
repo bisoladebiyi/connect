@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+.container {
+    width: 50%;
+    padding: 25px 20px;
+    background: #e6e6e61c;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.inputDiv{
+    width: 90%;
+}
+.input{
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #648e9b74;
+   width: 90%;
+   resize: none;
+   font-size: 20px;
+   font-weight: 500;
+   max-height: 150px;
+   font-family: Montserrat;
+ 
+}
+
+.input::placeholder{
+    font-family: Montserrat;
+}
+.button{
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: column;
+    background: #709fae;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: .5px;
+    font-size: 13px;
+    margin-top: 10px;
+    transition: all ease-in-out .2s;
+}
+.button:hover{
+    background: #608794;
+}
