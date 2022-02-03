@@ -1,5 +1,6 @@
-import { addDoc, collection, getDoc, getDocs } from "firebase/firestore"
-import { db } from "./firebase"
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { addDoc, collection } from "firebase/firestore"
+import { auth, db } from "./firebase"
 
 export const makePost = async(post) => {
     try{
@@ -8,11 +9,13 @@ export const makePost = async(post) => {
         throw err
     }
 }
-// export const getPosts = async () => {
-//   try {
-//       const res = await getDocs(collection(db, "posts"))
-//       console.log(res)
-//   }catch(err) {
-//       throw err
-//   }
-// }
+
+export const signInWithGoogle = async() => {
+const provider = new GoogleAuthProvider()
+   try{
+       const response = await signInWithPopup(auth, provider)
+       console.log(response)
+   }catch(err){
+       throw err
+   }
+}

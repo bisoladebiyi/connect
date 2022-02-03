@@ -21,3 +21,7 @@ body{
   background: #fff;
   font-family: Montserrat;
 }
+
+html, #__next, body {
+  height: 100%;
+}
