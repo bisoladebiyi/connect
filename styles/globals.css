@@ -16,6 +16,8 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Montserrat;
+
 }
 body{
   background: #fff;
@@ -23,5 +25,8 @@ body{
 }
 
 html, #__next, body {
+  height: 100%;
+}
+.container{
   height: 100%;
 }

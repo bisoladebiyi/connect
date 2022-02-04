@@ -1,10 +1,19 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { auth } from '../firebase';
 import styles from "../styles/Login.module.css"
 import { signInWithGoogle } from '../utils';
 
 const Login = () => {
     const router = useRouter()
+    useEffect(()=> {
+        onAuthStateChanged(auth, user => {
+            if(user){
+                router.push("/feed")
+            }
+        })
+    },[])
     const signIn = () => {
         signInWithGoogle().then(()=> router.push("/feed"))
     }
