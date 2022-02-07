@@ -38,11 +38,3 @@ const CreatePost = ({user}) => {
 
 
 export default CreatePost;
-// export const getStaticProps = async() => {
-//     const userData = {}
-//    await onAuthStateChanged(auth, (user) => { userData =  user.providerData[0] })
-//     return {
-//         props: {userData}
-//     }
-
-// }

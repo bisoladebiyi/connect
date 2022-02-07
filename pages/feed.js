@@ -5,6 +5,7 @@ import CreatePost from "../components/CreatePost";
 import Feed from "../components/Feed";
 import Navbar from "../components/navbar";
 import { auth } from "../firebase";
+import ConnectUsers from '../components/ConnectUsers';
 
 
 export default function Home() {
@@ -23,13 +24,23 @@ export default function Home() {
   return (
     <div>
       <main>
+        <ConnectUsers />
+        <div className="feedContainer">
         <CreatePost user={user}  />
         <Feed />
+        </div>
       </main>
       <style jsx>
         {`
           main {
-            padding-top: 70px;
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            overflow: scroll;
+          }
+          .feedContainer{
+            width: 70%
+           
           }
         `}
       </style>

@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDoc, getDocs } from "firebase/firestore";
 import { auth, db } from "./firebase";
 
 export const makePost = async (post) => {
@@ -10,6 +10,14 @@ export const makePost = async (post) => {
   }
 };
 
+export const makeComment = async(id, comment) => {
+    try{
+      await addDoc(collection(db, "posts", id, "comments"), comment)
+    }catch(err){
+      throw err
+    }
+}
+
 export const signInWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({
@@ -17,6 +25,7 @@ export const signInWithGoogle = async () => {
   });
   try {
     const response = await signInWithPopup(auth, provider);
+   addDoc(collection(db, "users"), {user: response.user.providerData[0]})
   } catch (err) {
     throw err;
   }

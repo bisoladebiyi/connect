@@ -4,14 +4,22 @@ import { auth } from '../firebase';
 import Navbar from './navbar';
 
 const Layout = ({children}) => {
-  const [ user, setUser ] = useState(null)
+  const [ userData, setUserData ] = useState(null)
+  const [ showNav, setShowNav ] = useState(false)
   useEffect(()=> {
     onAuthStateChanged(auth, user => {
-        setUser(user.providerData[0])
+      if(user){
+        setShowNav(true) 
+        setUserData(user.providerData[0])
+      }else{
+        setShowNav(false)
+      }
+    
     })
   },[])
   return <div>
-      <Navbar user={user} />
+    {showNav && <Navbar user={userData} />}
+      
       {children}
       <style jsx>
         {
