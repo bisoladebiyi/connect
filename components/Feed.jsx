@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Feed.module.css";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import PostContainer from "./PostContainer";
+
 const Feed = () => {
   const [posts, setPosts] = useState(null);
+
   useEffect(() => {
     onSnapshot(
       query(collection(db, "posts"), orderBy("time", "desc")),
@@ -22,6 +24,7 @@ const Feed = () => {
           </div>
         );
       })}
+      
     </div>
   );
 };

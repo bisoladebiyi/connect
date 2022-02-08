@@ -7,20 +7,15 @@ import PostContainer from './PostContainer';
 
 
 
-const UserPosts = () => {
+const UserPosts = ({ user }) => {
     const [ userPosts, setUserPosts ] = useState(null)
     const [ viewAll, setViewAll ] = useState(false)
-    const [user, setUser] = useState(null)
 
-    useEffect(()=> {
-        onAuthStateChanged(auth, user => {
-            setUser(user) 
+
+    useEffect(()=> { 
             onSnapshot(query(collection(db, "posts"),orderBy("time", "desc")), snapshot =>{
                 setUserPosts(snapshot)
             } )
-           
-           
-        })
     }, [])
 
   return <div className={styles.container}>
@@ -29,12 +24,12 @@ const UserPosts = () => {
           <p className={viewAll ? `${styles.title}` : `${styles.secondTitle}`} onClick={() => setViewAll(true)}>All Posts</p>
       </div>
       <div className={styles.postContainer}>
-          {!viewAll ? userPosts?.docs.filter((doc)=> doc.data().userData.uid === user?.providerData[0].uid).slice(0, 3).map((post)=> (
+          {!viewAll ? userPosts?.docs.filter((doc)=> doc.data().userData.uid === user?.uid).slice(0, 3).map((post)=> (
               <div key={post.id}>
                   <PostContainer doc={post}  />
               </div>
           )) :
-          userPosts?.docs.filter((doc)=> doc.data().userData.uid === user?.providerData[0].uid).map((post)=> (
+          userPosts?.docs.filter((doc)=> doc.data().userData.uid === user?.uid).map((post)=> (
             <div key={post.id}>
                 <PostContainer doc={post}  />
             </div>

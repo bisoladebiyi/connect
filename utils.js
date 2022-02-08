@@ -25,7 +25,7 @@ export const signInWithGoogle = async () => {
   });
   try {
     const response = await signInWithPopup(auth, provider);
-   addDoc(collection(db, "users"), {user: response.user.providerData[0]})
+  //  addDoc(collection(db, "users"), {user: response.user.providerData[0]})
   } catch (err) {
     throw err;
   }

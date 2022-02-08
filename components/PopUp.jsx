@@ -1,7 +1,6 @@
 import React from 'react';
 import { Avatar } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import styles from '../styles/PopUp.module.css'
@@ -21,7 +20,6 @@ const PopUp = ({user, close}) => {
 <div className={styles.btnContainer}>
 <Link href={'/feed'} passHref><button className={styles.btn} onClick={close}><HomeRoundedIcon className={styles.icon}/> Feed</button></Link> 
 <Link href={'/profile'}  passHref><button className={styles.btn} onClick={close}><AccountCircleOutlinedIcon className={styles.icon}/> View Profile</button></Link>
-<button className={styles.btn} onClick={close}><ManageAccountsOutlinedIcon className={styles.icon}/> Settings</button>
 <button className={styles.btn} onClick={signOut}><LogoutRoundedIcon className={styles.icon} /> Sign Out</button>
 </div>
 

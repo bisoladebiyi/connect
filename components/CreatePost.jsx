@@ -1,9 +1,5 @@
-import { Avatar } from '@mui/material';
-import autosize from 'autosize';
-import { onAuthStateChanged } from 'firebase/auth';
 import { serverTimestamp } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { auth } from '../firebase';
+import React, { useState } from 'react';
 import styles from '../styles/CreatePost.module.css'
 import { makePost } from '../utils';
 const CreatePost = ({user}) => {
@@ -12,25 +8,26 @@ const CreatePost = ({user}) => {
 
     
     const change = (e) => {
-        let post = document.getElementById("post")
         setValue(e.target.value)
-        autosize(post)
         setText({...text, text: e.target.value, userData: user})
         console.log(text)
     }
     const sendPost = (e) => {
         e.preventDefault()
-        makePost(text).then(()=> setValue(""))
+        if(value){
+            makePost(text).then(()=> setValue(""))
+        }else {
+            alert("Please share something?😢")
+        }
+       
     }
   return <div className={styles.container}>
-      <Avatar src={user?.photoURL}/>
-      <div className={styles.inputDiv}>
-          <form action="" onSubmit={(e) => sendPost(e)}>
-          <textarea className={styles.input} value={value} id="post" placeholder="What's Up?" onChange={(e) => change(e)} />
-          <button type='submit' className={styles.button}>Post</button>
+
+          <form className={styles.inputDiv} action="" onSubmit={(e) => sendPost(e)}>
+          <textarea className={styles.input} value={value} placeholder="What's Up?" onChange={(e) => change(e)} autoFocus />
+          <button type='submit' className={styles.button}>Make Post</button>
           </form>
           
-      </div>
 
   </div>;
 };

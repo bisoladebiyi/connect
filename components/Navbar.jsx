@@ -4,6 +4,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import styles from "../styles/Home.module.css";
 import "../styles/Home.module.css";
 import PopUp from "./PopUp";
+import Link from "next/link";
 
 const Navbar = ({ user }) => {
   const [showPopUpMenu, setShowPopUpMenu] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = ({ user }) => {
   }
   return (
     <div className={styles.nav}>
-      <h3 className={styles.logo}>connect</h3>
+      <Link href="/feed" passHref><div><h3 className={styles.logo}>connect</h3></div></Link>
       <div className={styles.form}>
       <input className={styles.search} type="text" placeholder="Search" />
       <SearchRoundedIcon className={styles.searchIcon} />

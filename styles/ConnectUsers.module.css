@@ -1,5 +1,5 @@
 .container {
-   background: rgb(247, 249, 249);
+    background: rgb(239, 246, 250);
     width: 300px;
     border-top-right-radius: 50px;
     padding-top: 20px;
@@ -14,16 +14,12 @@
     font-weight: 600;
     margin-top: 30px;
 }
-
 .userContainer {
     display: flex;
     margin-top: 25px;
     align-items: center;
     width: 100%;
     cursor: pointer;
-}
-.userContainer:hover{
-    /* background: #ddd; */
 }
 .name{
     font-weight: 500;

@@ -1,15 +1,18 @@
 .container{
-    width: 70%;
+    width: 90%;
     margin: 20px 0 0;
 }
 .posts{
     width: 100%;
+ 
 }
 .postContainer {
    display: flex; 
    width: 100%;
    padding: 25px 20px;
-   background: #648e9b13;
+   box-shadow: 0px 0px 4px #ddd;
+   background: #fff;
+   margin-left: 10px;
    margin-bottom: 20px;
    border-radius: 15px;
 }
@@ -47,7 +50,7 @@
     display: flex;
     align-items: center;
     margin-right: 30px;
-    color: #8CA1A5;
+    color: #1572a1a6;
     cursor: pointer;
 }
 .commentsContainer {
@@ -69,7 +72,7 @@
 .commentInput {
     background: none;
     border: none;
-    border-bottom: 1px solid #8CA1A5;
+    border-bottom: 1px solid #1572A1;
     outline: none;
     resize: none;
     margin-right: 20px;
@@ -79,7 +82,7 @@
     border-radius: 20px;
     padding: 5px 7px;
     border: none;
-    background: #8CA1A5;
+    background: #1a89c0;
     color: #fff;
     cursor: pointer;
     font-size: 10px;
@@ -98,4 +101,21 @@
  font-size: 13px;
  margin-top: 5px;
  color: rgb(84, 84, 84);
+}
+.scrollArrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1572A1;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    cursor: pointer;
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px;
+}
+.arrow{
+    width: 18px;
+    height: 18px;
 }
