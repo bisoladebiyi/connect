@@ -3,6 +3,7 @@ import { Avatar } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import styles from '../styles/PopUp.module.css'
 import { logOut } from '../utils';
 import { useRouter } from 'next/router';

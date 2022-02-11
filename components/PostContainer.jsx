@@ -17,11 +17,11 @@ const PostContainer = ({doc}) => {
 
   useEffect(()=> {
    onAuthStateChanged(auth, user => {
-    setUser(user.providerData[0])
+    setUser(user?.providerData[0])
    })
-   onSnapshot(doc && query(collection(db, "posts", doc.id,"comments"), orderBy("time", "desc")), snapshot => setComments(snapshot))
+   onSnapshot(doc && query(collection(db, "posts", doc.id,"comments"), orderBy("time", "asc")), snapshot => setComments(snapshot))
 
-  },[])
+  },[doc])
   const showInput = () => {
     setInput(!input)
   }
@@ -34,12 +34,11 @@ const PostContainer = ({doc}) => {
    
   }
   return <div className={styles.postContainer}>
-       <Avatar src={doc.data().userData.photoURL}/>
+       <Avatar src={doc.data().userData.photoURL} className={styles.userImg}/>
              <div className={styles.nameMessageContainer}>
                 <p className={styles.name}>{doc.data().userData.displayName}</p>
                 <p className={styles.message}>{doc.data().text}</p>
                 <div className={styles.icons}>
-                    <span className={styles.span}><FavoriteBorderRoundedIcon className={styles.icon} />0</span>
                     <span onClick={showInput} className={styles.span}><ChatBubbleOutlineRoundedIcon className={styles.icon} />{comments ? comments.docs.length : '0'}</span>
                 </div>
                 {input && <div className={styles.commentsContainer}>

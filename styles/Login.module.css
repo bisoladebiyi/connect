@@ -2,16 +2,55 @@
     width: 100%;
     height: 100%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.aboutConnectContainer{
+    height: 100%;
+    background: #1572a158;
+    color: #fff;
+    display: grid;
     place-items: center;
+    position: relative;
+}
+.aboutConnect{
+    width: 70%;
+    text-align: center;
+}
+.aboutText{
+    font-size: 13px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.scroll{
+    display: none;
+}
+.connectIcon {
+    margin-top: 20px;
+    width: 200px !important;
+    height: 200px !important;
+}
+.span{
+    color: #1572A1;
+    font-weight: 600;
 }
 .body {
+    display: grid;
+    place-items: center;
+}
+.signIn{
     text-align: center;
-    width: 40%;
 }
 .logo{
-    color: #5a7c51;
+    color: #1572A1;
     margin-bottom: 20px;
     font-size: 40px;
+}
+.text{
+    font-weight: 600;
+    font-size: 13px;
+    color: rgb(135, 135, 135);
+    margin-top: 15px;
 }
 .button {
     background: #4c8aed;
@@ -22,8 +61,23 @@
     cursor: pointer;
     font-weight: 600;
     letter-spacing: .4px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .button:hover{
     background: #3f83f0;
+}
+
+@media(max-width:600px){
+    .container {
+        display: block;
+    }
+    .scroll{
+        display: block;
+        position: absolute;
+        bottom: 30px;
+        cursor: pointer;
+    }
+    .body{
+        height: 100%;
+    }
 }

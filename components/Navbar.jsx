@@ -18,7 +18,7 @@ const Navbar = ({ user }) => {
   }
   return (
     <div className={styles.nav}>
-      <Link href="/feed" passHref><div><h3 className={styles.logo}>connect</h3></div></Link>
+      <Link href="/feed" passHref><div><h3 className={styles.logo}>share</h3></div></Link>
       <div className={styles.form}>
       <input className={styles.search} type="text" placeholder="Search" />
       <SearchRoundedIcon className={styles.searchIcon} />
@@ -26,7 +26,7 @@ const Navbar = ({ user }) => {
      
       <div className={styles.icons}>
         <div className={styles.avatarBox} onClick={showPopUp}>
-          <Avatar src={user?.photoURL} />
+          <Avatar src={user?.photoURL} className={styles.userPhoto} />
         </div>
         {showModal && (
           <div className={styles.modal}>

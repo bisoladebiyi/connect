@@ -1,7 +1,7 @@
 import { Avatar } from '@mui/material';
-import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from "../styles/PersonalInfo.module.css"
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 
 const PersonalInfo = ({user, otherUser}) => {
   
@@ -11,10 +11,6 @@ const PersonalInfo = ({user, otherUser}) => {
       </div>
       <p className={styles.name}>{user?.displayName}</p>
       { otherUser ? null :<p className={styles.email}>{user?.email}</p>}
-      {otherUser ? null : <button className={styles.btn}><ManageAccountsOutlinedIcon className={styles.icon}/> Settings</button>}
-
-      
-      
   </div>;
 };
 

@@ -51,3 +51,40 @@
     width: 20px;
     height: 20px;
 }
+
+
+
+
+@media(max-width: 800px) {
+    .container{
+        width: 250px;
+    }
+  
+}
+@media(max-width: 450px) {
+    .container{
+        width: 200px;
+    }
+    .avatar {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .name {
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .email{
+        font-size: 11px;
+        margin-top: 6px;
+    }
+    .btn{
+        font-size: 11px;
+        padding: 8px 15px;
+    }
+    .icon{
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+    }
+  
+}

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 .container {
-    width: 90%;
+    width: 70%;
     padding: 30px 50px;
     background: #fff;
     box-shadow: 0px 0px 4px #ddd;
@@ -8,8 +8,7 @@
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    margin: 10px 0 50px;
-    margin-left: 10px;
+    margin: 10px auto 50px;
 }
 .inputDiv{
     width: 100%;
@@ -47,4 +46,26 @@
 }
 .button:hover{
     background: #1572a1;
+}
+
+@media(max-width: 800px){
+    .container{
+        width: 85%;
+        padding: 20px 30px;
+    }
+    .input{
+        height: 150px;
+    }
+    .button{
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+}
+@media(max-width: 400px){
+    .container{
+        width: 90%;
+        padding: 20px 15px;
+    }
+
 }

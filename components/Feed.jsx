@@ -23,8 +23,7 @@ const Feed = () => {
             <PostContainer doc={doc} />
           </div>
         );
-      })}
-      
+      })}    
     </div>
   );
 };

@@ -28,6 +28,11 @@ const Profile = () => {
             display: flex;
             justify-content: space-between;
           }
+          @media(max-width: 800px){
+            main{
+              flex-direction: column;
+            }
+          }
         `}
       </style>
   </div>;

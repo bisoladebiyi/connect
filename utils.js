@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { addDoc, collection, getDoc, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDoc, getDocs, onSnapshot } from "firebase/firestore";
 import { auth, db } from "./firebase";
 
 export const makePost = async (post) => {
@@ -23,9 +23,9 @@ export const signInWithGoogle = async () => {
   provider.setCustomParameters({
     prompt: "select_account",
   });
+
   try {
     const response = await signInWithPopup(auth, provider);
-  //  addDoc(collection(db, "users"), {user: response.user.providerData[0]})
   } catch (err) {
     throw err;
   }

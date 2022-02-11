@@ -5,8 +5,8 @@ import CreatePost from "../components/CreatePost";
 import Feed from "../components/Feed";
 import styles from "../styles/Feed.module.css";
 import { auth } from "../firebase";
-import ConnectUsers from '../components/ConnectUsers';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import * as smoothscroll from 'smoothscroll-polyfill';
 
 
 
@@ -14,6 +14,8 @@ export default function Home() {
   const [ user, setUser ] = useState(null)
   const router = useRouter()
   const postRef = useRef(null)
+
+
   useEffect(()=> {
     onAuthStateChanged(auth, user => {
       if(user){
@@ -21,9 +23,10 @@ export default function Home() {
       }else{
         router.push("/login")
       }
+      smoothscroll.polyfill();
      
     })
-  })
+  },[])
   const scrollUp = () => {
     postRef?.current?.scrollIntoView({
       behavior: "smooth"
@@ -32,7 +35,6 @@ export default function Home() {
   return (
     <div className='main'>
       <main>
-        <ConnectUsers />
         <div className="feedContainer">
          <div ref={postRef}></div>
           <CreatePost user={user}  />
@@ -55,9 +57,15 @@ export default function Home() {
             height:100%;
           }
           .feedContainer{
-            width: 70%;
+            width: 100%;
             height:100%;
             overflow:scroll;
+          }
+          @media(max-width:800px){
+            main{
+              padding-top: 70px;
+            }
+           
           }
 
         `}
@@ -65,3 +73,4 @@ export default function Home() {
     </div>
   );
 }
+

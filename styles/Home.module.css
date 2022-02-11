@@ -49,6 +49,7 @@ font-size: 11px;
 .form{
   width: 40%;
   position: relative;
+  display: none;
 }
 .search {
   width: 100%;
@@ -67,4 +68,33 @@ font-size: 11px;
   width: 20px;
   height: 20px;
   color: #5a7c51;
+}
+
+@media(max-width: 800px) {
+  .modal{
+    display: none;
+  }
+  .nav{
+    padding: 10px 30px;
+  }
+  .logo{
+    font-size: 18px;
+  }
+  .userPhoto{
+    width: 35px !important;
+    height: 35px !important;
+  }
+ 
+}
+@media(max-width:400px) {
+  .form{
+    display: none;
+  }
+  .nav{
+    padding: 10px 20px;
+  }
+  .userPhoto{
+    width: 30px !important;
+    height: 30px !important;
+  }
 }
