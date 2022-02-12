@@ -23,7 +23,7 @@ const CreatePost = ({user}) => {
   return <div className={styles.container}>
 
           <form className={styles.inputDiv} action="" onSubmit={(e) => sendPost(e)}>
-          <textarea className={styles.input} value={value} placeholder="What's Up?" onChange={(e) => change(e)} autoFocus />
+          <textarea className={styles.input} value={value} placeholder="What's Up?" onChange={(e) => change(e)} />
           <button type='submit' className={styles.button}>Make Post</button>
           </form>
           
