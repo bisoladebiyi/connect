@@ -44,7 +44,7 @@ const PostContainer = ({doc}) => {
                 {input && <div className={styles.commentsContainer}>
                   <div className={styles.commentContainer}>
                   <Avatar className={styles.commentAvatar} src={user?.photoURL}/>
-                  <textarea value={value} onChange={(e)=> setValue(e.target.value)} className={styles.commentInput} type="text" placeholder='Add Comment' autoFocus />
+                  <textarea value={value} onChange={(e)=> setValue(e.target.value)} className={styles.commentInput} type="text" placeholder='Add Comment' />
                   <button className={styles.button} onClick={submitComment}>Send</button>
                   </div>
                   {comments?.docs.map((comment) => {
