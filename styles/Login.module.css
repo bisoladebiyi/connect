@@ -22,9 +22,7 @@
     margin-top: 20px;
     font-weight: 500;
 }
-.scroll{
-    display: none;
-}
+
 .connectIcon {
     margin-top: 20px;
     width: 200px !important;
@@ -67,6 +65,12 @@
     background: #3f83f0;
 }
 
+.scroll{
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    cursor: pointer;
+}
 @media(max-width:600px){
     .container {
         display: block;

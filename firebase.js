@@ -5,15 +5,14 @@ import { getAuth } from 'firebase/auth'
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCHTDS-h09sHBaVC3baDBNPoT9Dn2s04nE",
-  authDomain: "blog-ad6da.firebaseapp.com",
-  projectId: "blog-ad6da",
-  storageBucket: "blog-ad6da.appspot.com",
-  messagingSenderId: "896016789476",
-  appId: "1:896016789476:web:e90d656ba17e95bce721f1",
-  measurementId: "G-4GQQJ6PJNT"
+  apiKey: "AIzaSyDB0t_mvWnch6PXllFqOR6MXQWpBGOVx3w",
+  authDomain: "share-2c8e4.firebaseapp.com",
+  projectId: "share-2c8e4",
+  storageBucket: "share-2c8e4.appspot.com",
+  messagingSenderId: "754022354561",
+  appId: "1:754022354561:web:351fc063af9d8d26cb0780",
+  measurementId: "G-WPK47DCYTR"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

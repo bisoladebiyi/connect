@@ -7,6 +7,7 @@ import ConnectWithoutContactRoundedIcon from '@mui/icons-material/ConnectWithout
 import { signInWithGoogle } from '../utils';
 import { ArrowDownwardRounded } from '@mui/icons-material';
 import * as smoothscroll from 'smoothscroll-polyfill';
+import HeadComponent from '../components/Head';
 
 const Login = () => {
     const router = useRouter()
@@ -27,8 +28,10 @@ const Login = () => {
             behavior: "smooth"
         })
     }
-  return <div className={styles.container}>
-      <div className={styles.aboutConnectContainer}>
+  return <div className='container'>
+       <HeadComponent text ="Login - Share" className="head" />
+       <div className={styles.container}>
+       <div className={styles.aboutConnectContainer}>
           <div className={styles.aboutConnect}>
           <h2>Welcome To <span className={styles.span}>share</span></h2>
           <ConnectWithoutContactRoundedIcon className={styles.connectIcon} />
@@ -45,6 +48,10 @@ const Login = () => {
           </div>
           
       </div>
+     
+       </div>
+   
+      
   </div>;
 };
 

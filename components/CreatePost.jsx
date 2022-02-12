@@ -10,7 +10,6 @@ const CreatePost = ({user}) => {
     const change = (e) => {
         setValue(e.target.value)
         setText({...text, text: e.target.value, userData: user})
-        console.log(text)
     }
     const sendPost = (e) => {
         e.preventDefault()

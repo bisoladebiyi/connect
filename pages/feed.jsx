@@ -7,6 +7,7 @@ import styles from "../styles/Feed.module.css";
 import { auth } from "../firebase";
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import * as smoothscroll from 'smoothscroll-polyfill';
+import HeadComponent from '../components/Head';
 
 
 
@@ -34,6 +35,7 @@ export default function Home() {
   }
   return (
     <div className='main'>
+      <HeadComponent text="Feed - share" />
       <main>
         <div className="feedContainer">
          <div ref={postRef}></div>

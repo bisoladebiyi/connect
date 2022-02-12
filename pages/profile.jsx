@@ -1,5 +1,6 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import HeadComponent from '../components/Head';
 import PersonalInfo from '../components/PersonalInfo';
 import UserPosts from '../components/UserPosts';
 import { auth } from '../firebase';
@@ -13,6 +14,7 @@ const Profile = () => {
     }, [])
 
   return <div className='container'>
+     <HeadComponent text="Your Profile - share" />
    <main>
        <PersonalInfo user={user} />
        <UserPosts user={user} />
@@ -31,6 +33,7 @@ const Profile = () => {
           @media(max-width: 800px){
             main{
               flex-direction: column;
+              height: 130%;
             }
           }
         `}

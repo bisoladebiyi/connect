@@ -59,6 +59,11 @@
     .container{
         width: 250px;
     }
+    .email{
+        font-size: 11px;
+        margin-top: 6px;
+        overflow-wrap: normal;
+    }
   
 }
 @media(max-width: 450px) {
@@ -72,10 +77,6 @@
     .name {
         font-weight: 600;
         font-size: 13px;
-    }
-    .email{
-        font-size: 11px;
-        margin-top: 6px;
     }
     .btn{
         font-size: 11px;

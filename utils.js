@@ -25,7 +25,7 @@ export const signInWithGoogle = async () => {
   });
 
   try {
-    const response = await signInWithPopup(auth, provider);
+     await signInWithPopup(auth, provider);
   } catch (err) {
     throw err;
   }
